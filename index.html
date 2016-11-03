@@ -1,0 +1,38 @@
+<!--
+<html>
+<body>
+<form action="excel2sql.php" method="post" enctype="multipart/form-data">
+<label for="file">Filename:</label>
+<input type="file" name="file" id="file" /> 
+<br />
+<input type="submit" name="submit" value="Submit" />
+</form>
+</body>
+</html>
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<title>Music Download</title>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<link rel="stylesheet" type="text/css" media="all" href="style.css" />
+	<script src="http://code.jquery.com/jquery-latest.js"></script>	
+</head>
+<body>	
+	<div class="logo">Excel  =>  SQL</div>
+		<div id="main">
+			<div class="form" >
+                <form action="excel2sql.php" method="post" enctype="multipart/form-data">
+                    <input type="text" id="title"><!--placeholder 属性可以添加输入框底面提示文字-->
+                    <div id="suggest"></div>
+                    <input type="file" name="file" id="file" />
+                    <button id="submit" type="submit" name="submit">Go!</button>                                        
+                </form>
+			</div>
+			<div id="result">
+				<div id="songInfo"></div>
+				<div id="songLink"></div>
+			</div>
+		</div>	
+</body>
+</html>

@@ -1,4 +1,16 @@
 <?php
+if ($_FILES["file"]["error"] > 0)
+  {
+  echo "Error: " . $_FILES["file"]["error"] . "<br />";
+  }
+else
+  {
+  echo "Upload: " . $_FILES["file"]["name"] . "<br />";
+  echo "Type: " . $_FILES["file"]["type"] . "<br />";
+  echo "Size: " . ($_FILES["file"]["size"] / 1024) . " Kb<br />";
+  echo "Stored in: " . $_FILES["file"]["tmp_name"];
+  }
+  die;
 require_once 'Classes/PHPExcel/IOFactory.php';
 //数据类型默认值
 $default = array(
@@ -17,6 +29,7 @@ $default = array(
     'mediumtext' => '', 
     'longtext' => '',     
 );
+$integer = ['int', 'tinyint', 'smallint', 'mediumint', 'bigint'];
 $file = './8.xls';
 //$html = '8.html';//excel2html($file);
 $html = excel2html($file);
@@ -45,6 +58,7 @@ function excel2html($file='') {
 
 function parse($file='') {
     global $default;
+    global $integer;
     $default_column = 6;
     $result = '';
     if($file) {
@@ -87,7 +101,7 @@ function parse($file='') {
                     foreach($table as $k => $v) {
                         $start = "DROP TABLE IF EXISTS `$table_name[$k]`;\n";
                         $start .= "CREATE TABLE IF NOT EXISTS `$table_name[$k]` (\n"; 
-                        $end = ") ENGINE=$table_engine[$k]  DEFAULT CHARSET=utf8 COMMENT='$table_comment[$k]' ;";                    
+                        $end = ") ENGINE = $table_engine[$k] DEFAULT CHARSET=utf8 COMMENT='$table_comment[$k]' ;";                    
                         $fields = array();       
                         $v = str_replace('&nbsp;', '', $v);
                         //echo $v;die;                 
@@ -113,15 +127,18 @@ function parse($file='') {
                                 $column_primary = $fields[6][$i];
                                 $column_default = $column_default ? $column_default : !empty($default[$column_type]) ? $default[$column_type] : ' ';
                                 $start .= "`$column_name` $column_type ($column_len) NOT NULL ";
+                                if(in_array($column_type, $integer)) {
+                                    $start .= 'unsigned ';
+                                }
                                 if($column_primary == 'Y') {
                                     $start .= 'AUTO_INCREMENT ';
                                     $primary = $i;
                                 } else {
                                     if($column_default != ' ') {
-                                        $start .= " DEFAULT '".$column_default."' ";
+                                        $start .= "DEFAULT '".$column_default."' ";
                                     }
                                 }
-                                $start .= " COMMENT '".$column_comment."',\n";
+                                $start .= "COMMENT '".$column_comment."',\n";
                             }
                             $start .= "PRIMARY KEY (`".$fields[1][$primary]."`)\n";
                             $content .= $start. $end."\n\n";
