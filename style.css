@@ -29,7 +29,7 @@ a:hover{
 	zoom:1
 }
 .logo{
-	margin: 100px  auto 40px auto;
+	margin: 50px  auto 40px auto;
 	width: 500px;
 	text-align: center;
 	font-size: 2.5em;	
@@ -57,8 +57,22 @@ a:hover{
 	display: none;
 }
 .form{
-	position:relative;
+	/*position:relative;*/
+    float:left;
 }
+.result {
+    float: right;
+    min-height: 350px;
+    width: 600px;
+    border: 2px solid rgba(0, 0, 0, 0.3);
+    background: #74c0f9;
+    padding: 20px 20px;
+    margin-right: -350px;
+    margin-top: 50px;
+    height: 455px;
+    font-family: sans-serif;
+}
+textarea::-webkit-input-placeholder{text-align: center;padding-top:25px; font-size: 20px; color: #202226;}
 #title{
 	border: 1px solid #AAA;
 	width:443px;

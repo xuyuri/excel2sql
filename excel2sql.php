@@ -10,6 +10,13 @@ else
   echo "Size: " . ($_FILES["file"]["size"] / 1024) . " Kb<br />";
   echo "Stored in: " . $_FILES["file"]["tmp_name"];
   }
+?>
+    <script type="text/javascript">
+//        $("#sql").text("Hello world!");
+        alert(1);
+    </script>
+<?php
+
   die;
 require_once 'Classes/PHPExcel/IOFactory.php';
 //数据类型默认值
