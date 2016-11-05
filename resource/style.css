@@ -1,0 +1,71 @@
+body {		
+	font:17px "Microsoft yahei",Arial;
+	color:#000000;
+	height:100%;
+	background-image: url(back.jpg);
+	background-size:cover;
+	margin:0px;
+    background: #eee;
+}
+a{
+	color:#fff;
+	background:#393C4B;
+	padding:2px 5px;
+	border-radius:3px;
+	text-decoration:none;
+}
+a:hover{
+	background:#202226;
+}
+.clearfix:after {
+	clear:both;
+	content:".";
+	display:block;
+	height:0;
+	line-height:0;
+	font-size:0;
+	visibility:hidden
+}
+.clearfix {
+	zoom:1
+}
+.logo{
+	margin: 100px  auto 40px auto;
+	width: 500px;
+	text-align: center;
+	font-size: 2.5em;	
+}
+#main{
+	margin:10px auto;
+	width: 600px;
+}
+.form{
+	/*position:relative;*/
+    float:left;
+}
+.result {
+    float: right;
+    min-height: 350px;
+    width: 600px;
+    border: 2px solid rgba(0, 0, 0, 0.3);
+    background: #74c0f9;
+    padding: 20px 20px;
+    margin-right: -350px;
+    margin-top: 30px;
+    height: 455px;
+    font-family: 微软雅黑;
+}
+textarea::-webkit-input-placeholder{text-align: center;padding-top:25px; font-size: 20px; color: #202226;}
+#title{
+	border: 1px solid #AAA;
+	width:443px;
+	height:20px;
+	line-height: 20px;
+	padding: 8px 75px 8px 10px;	
+	font-size:15px;
+}
+#footer {
+    position: absolute;bottom: 0;
+    left: 0;
+    height: 60px;
+}
