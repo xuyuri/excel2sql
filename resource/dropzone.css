@@ -173,27 +173,22 @@
 .dropzone, .dropzone * {
   box-sizing: border-box; }
 
-/*.dropzone {
-    min-height: 100px;
-    width: 600px;
-    border: 2px dashed #000000;   
-    padding: 50px 20px;
-    background: #74c0f9;
-    margin-left: -350px;
-    margin-top: 30px;
-    height: 500px;
-}*/
 .dropzone {
-    float: left;  
-    width: 600px;  
+    /*float: left;  */
+    /*width: 100%;*/
+    /*border: 2px dashed #000000;*/
+    /*padding: 20px 20px;*/
+    /*background: #74c0f9;*/
+    /*margin-left: -350px;*/
+    /*margin-top: 30px;*/
+    /*height: auto !important;*/
+    /*height: 200px;*/
+    /*min-height: 344px;*/
+    height: 100%;
+    width: 100%;
+    background: #74c0f9;
     border: 2px dashed #000000;
     padding: 20px 20px;
-    background: #74c0f9;
-    margin-left: -350px;
-    margin-top: 30px;
-    height: auto !important;
-    height: 200px;
-    min-height: 344px;
 }
   .dropzone.dz-clickable {
     cursor: pointer; }
@@ -209,7 +204,7 @@
       opacity: 0.5; }
   .dropzone .dz-message {
     text-align: center;
-    margin: 2em 0; }
+    margin: 45% 0; }
   .dropzone .dz-preview {
     position: relative;
     display: inline-block;

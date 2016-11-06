@@ -51,6 +51,7 @@ function main() {
             @unlink($html_url);
             if (!empty($content)) {
                 @file_put_contents($result_file, $content);
+                echo "success";
             }
         }
     }
