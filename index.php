@@ -19,7 +19,7 @@
         </div>
 	</div>
     <div id="footer" align="center">
-        <div align="center" style="margin-bottom: 15px">
+        <div align="center" style="margin-bottom: 5px">
             <a href="resource/demo.xls">Demo Download</a>
         </div>
         Powered BY Yurixu
