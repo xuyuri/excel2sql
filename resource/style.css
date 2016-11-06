@@ -76,7 +76,7 @@ textarea::-webkit-input-placeholder{text-align: center;padding-top:25px; font-si
 	font-size:15px;
 }
 #footer {
-    position: absolute;bottom: 40px;
+    position: absolute;bottom: 30px;
     width: 100%;
     float: left;
     margin: 30px auto 0px auto;
