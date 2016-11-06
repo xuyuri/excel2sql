@@ -30,7 +30,7 @@ a:hover{
 	zoom:1
 }
 .logo{
-	margin: 100px  auto 40px auto;
+	margin: 5%  auto 40px auto;
 	width: 500px;
 	text-align: center;
 	font-size: 2.5em;	
@@ -43,7 +43,7 @@ a:hover{
 	/*position:relative;*/
     float:left;
 }
-.result {
+/*.result {
     float: right;
     min-height: 350px;
     width: 600px;
@@ -54,6 +54,18 @@ a:hover{
     margin-top: 30px;
     height: 455px;
     font-family: 微软雅黑;
+}*/
+.result {
+    float: right;
+    width: 600px;
+    border: 2px solid rgba(0, 0, 0, 0.3);
+    background: #74c0f9;
+    padding: 20px 20px;
+    margin-right: -350px;
+    margin-top: 30px;
+    font-family: 微软雅黑;
+    height: auto !important;
+    min-height: 300px;
 }
 textarea::-webkit-input-placeholder{text-align: center;padding-top:25px; font-size: 20px; color: #202226;}
 #title{

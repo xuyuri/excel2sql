@@ -173,18 +173,27 @@
 .dropzone, .dropzone * {
   box-sizing: border-box; }
 
-.dropzone {
+/*.dropzone {
     min-height: 100px;
     width: 600px;
-    /*border: 3px dotted rgba(0, 0, 0, 0.3);*/
-    /*background: #74c0f9;*/
-    border: 2px dashed #000000;
-    /*background: white;*/
+    border: 2px dashed #000000;   
     padding: 50px 20px;
     background: #74c0f9;
     margin-left: -350px;
     margin-top: 30px;
     height: 500px;
+}*/
+.dropzone {
+    float: left;  
+    width: 600px;  
+    border: 2px dashed #000000;
+    padding: 20px 20px;
+    background: #74c0f9;
+    margin-left: -350px;
+    margin-top: 30px;
+    height: auto !important;
+    height: 200px;
+    min-height: 344px;
 }
   .dropzone.dz-clickable {
     cursor: pointer; }
