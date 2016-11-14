@@ -25,7 +25,7 @@ $default_sql = "    `create_time` datetime NOT NULL COMMENT '创建时间',
     `loginip` varchar(50) NOT NULL DEFAULT '' COMMENT '最后登录IP',
     ";
 //整型字段列表
-$integer = ['int', 'tinyint', 'smallint', 'mediumint', 'bigint'];
+$integer = array('int', 'tinyint', 'smallint', 'mediumint', 'bigint');
 //转换结果存储文件
 $result_file = 'result.txt';
 $tmp_url = '';          //上传文件临时地址
