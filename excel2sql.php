@@ -18,11 +18,8 @@ $default = array(
     'longtext' => '',
 );
 //数据表默认字段列表
-$default_sql = "    `create_time` datetime NOT NULL COMMENT '创建时间',
-    `creator_wechat` varchar(50) NOT NULL DEFAULT '' COMMENT '创建者用户微信号',
-    `operate_time` datetime NOT NULL COMMENT '最后操作时间',
-    `operator_wechat` varchar(50) NOT NULL DEFAULT '' COMMENT '操作者用户微信',
-    `loginip` varchar(50) NOT NULL DEFAULT '' COMMENT '最后登录IP',
+$default_sql = "    `create_time` datetime NOT NULL COMMENT '创建时间',    
+    `operate_time` datetime NOT NULL COMMENT '最后操作时间',        
     ";
 //整型字段列表
 $integer = array('int', 'tinyint', 'smallint', 'mediumint', 'bigint');
@@ -169,9 +166,13 @@ function html2sql($file='') {
                                 $column_len = $fields[3][$i];           //字段长度
                                 $column_default = $fields[4][$i];       //字段默认值
                                 $column_comment = $fields[5][$i];       //字段备注
-                                $column_primary = $fields[6][$i];       //字段主键
-                                $column_default = $column_default ? $column_default : !empty($default[$column_type]) ? $default[$column_type] : ' ';
-                                $start .= "    `$column_name` $column_type ($column_len) ";
+                                $column_primary = $fields[6][$i];       //字段主键                                
+                                $column_default = $column_default ? $column_default : isset($default[$column_type]) ? $default[$column_type] : ' ';
+                                $start .= "    `$column_name` $column_type";
+                                if(!empty($column_len)) {
+                                    $start .= "($column_len)";
+                                }
+                                $start .= ' ';
                                 //整型自动设置为无符号类型unsigned
                                 if(in_array($column_type, $integer)) {
                                     $start .= 'unsigned ';
